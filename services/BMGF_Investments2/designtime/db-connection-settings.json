@@ -1,0 +1,23 @@
+{
+  "username" : "saraswathi",
+  "password" : "7b6a43524a353f3a664c733d4e537670477c612a43",
+  "url" : "jdbc:sqlserver://52.12.107.45:1433;databaseName=BMGF_Investments2",
+  "driverClass" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.WMSQLServerDialect",
+  "serviceId" : "BMGF_Investments2",
+  "packageName" : "com.test_20apr.bmgf_investments2",
+  "dbType" : "SQLServer",
+  "host" : "52.12.107.45",
+  "dbName" : "BMGF_Investments2",
+  "port" : "1433",
+  "schemaName" : "dbo",
+  "tableFilter" : [ "AttributeCategory", "AttributeCategoryCode", "AttributeGroup", "Initiative", "Investment", "InvestmentAttribute", "InvestmentAttributeCode", "KeyElement", "Program", "Status", "Strategy", "SubInitiative", "sysdiagrams", "vw_Investment", "vw_InvestmentAttributesAndCodes" ],
+  "schemaFilter" : [ "dbo" ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "readOnly" : false
+}

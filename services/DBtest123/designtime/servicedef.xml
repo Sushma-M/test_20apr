@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="DBtest123" type="DataService" springFile="DBtest123.spring.xml">
+    <dataobjects>
+        <dataobject javaType="com.test_20apr.dbtest123.Types">
+            <element name="float1" typeRef="java.lang.Float" allowNull="true"/>
+            <element name="byte1" typeRef="java.lang.String" allowNull="true"/>
+            <element name="string1" typeRef="java.lang.String" allowNull="true"/>
+            <element name="text1" typeRef="java.lang.String" allowNull="true"/>
+            <element name="datetime1" typeRef="java.util.Date" allowNull="true"/>
+            <element name="clob1" typeRef="java.lang.String" allowNull="true"/>
+            <element name="boolean1" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="bigint1" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="int1" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="long1" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="time1" typeRef="java.util.Date" allowNull="true"/>
+            <element name="bigDec1" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="char1" typeRef="java.lang.String" allowNull="true"/>
+            <element name="blob1" typeRef="java.lang.String" isList="true" allowNull="true"/>
+            <element name="double1" typeRef="java.lang.Double" allowNull="true"/>
+            <element name="timestamp1" typeRef="java.util.Date" allowNull="true"/>
+            <element name="date1" typeRef="java.util.Date" allowNull="true"/>
+            <element name="short1" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.dbtest123.CompositesDiff">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="time2" typeRef="java.util.Date" allowNull="true"/>
+            <element name="column7" typeRef="java.lang.String" allowNull="true"/>
+            <element name="boolean2" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="datetime2" typeRef="java.util.Date" allowNull="true"/>
+            <element name="timestamp2" typeRef="java.util.Date" allowNull="true"/>
+            <element name="date1" typeRef="java.util.Date" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.dbtest123.AllDiffTypes">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="time2" typeRef="java.util.Date" allowNull="true"/>
+            <element name="time1" typeRef="java.util.Date" allowNull="true"/>
+            <element name="datetime1" typeRef="java.util.Date" allowNull="true"/>
+            <element name="boolean2" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="timestamp2" typeRef="java.util.Date" allowNull="true"/>
+            <element name="datetime2" typeRef="java.util.Date" allowNull="true"/>
+            <element name="date2" typeRef="java.util.Date" allowNull="true"/>
+            <element name="boolean1" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="timestamp1" typeRef="java.util.Date" allowNull="true"/>
+            <element name="date1" typeRef="java.util.Date" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>

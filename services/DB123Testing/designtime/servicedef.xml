@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="DB123Testing" type="DataService" springFile="DB123Testing.spring.xml">
+    <dataobjects>
+        <dataobject javaType="com.test_20apr.db123testing.Types">
+            <element name="doubleCol" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="intCol" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="stringCol" typeRef="java.lang.String" allowNull="true"/>
+            <element name="timeCol" typeRef="java.util.Date" allowNull="true"/>
+            <element name="shortCol" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="floatCol" typeRef="java.lang.Float" allowNull="true"/>
+            <element name="blobCol" typeRef="java.lang.String" isList="true" allowNull="true"/>
+            <element name="booleanCol" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="dateCol" typeRef="java.util.Date" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="timestampCol" typeRef="java.util.Date" allowNull="true"/>
+            <element name="longCol" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="bigdecCol" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="textCol" typeRef="java.lang.String" allowNull="true"/>
+            <element name="datetimeCol" typeRef="java.util.Date" allowNull="true"/>
+            <element name="charCol" typeRef="java.lang.String" allowNull="true"/>
+            <element name="clobCol" typeRef="java.lang.String" allowNull="true"/>
+            <element name="bigIntCol" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="byteCol" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.db123testing.TypesSpacing">
+            <element name="doubleCol" typeRef="java.lang.Double" allowNull="true"/>
+            <element name="bigDecCol" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="intCol" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="stringCol" typeRef="java.lang.String" allowNull="true"/>
+            <element name="timeCol" typeRef="java.util.Date" allowNull="true"/>
+            <element name="shortCol" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="floatCol" typeRef="java.lang.Float" allowNull="true"/>
+            <element name="blobCol" typeRef="java.lang.String" isList="true" allowNull="true"/>
+            <element name="booleanCol" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="dateCol" typeRef="java.util.Date" allowNull="true"/>
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="timestampCol" typeRef="java.util.Date" allowNull="true"/>
+            <element name="longCol" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="textCol" typeRef="java.lang.String" allowNull="true"/>
+            <element name="datetimeCol" typeRef="java.util.Date" allowNull="true"/>
+            <element name="charCol" typeRef="java.lang.String" allowNull="true"/>
+            <element name="bigIntCol" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="byteCol" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.db123testing.Table3">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="column2" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>

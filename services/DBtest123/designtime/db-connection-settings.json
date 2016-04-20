@@ -1,0 +1,23 @@
+{
+  "username" : "sa",
+  "password" : "7b6a43524a353f3a664c733d4e537670477c612a43",
+  "url" : "jdbc:sqlserver://52.12.107.45:1433;databaseName=DBtest123",
+  "driverClass" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.WMSQLServerDialect",
+  "serviceId" : "DBtest123",
+  "packageName" : "com.test_20apr.dbtest123",
+  "dbType" : "SQLServer",
+  "host" : "52.12.107.45",
+  "dbName" : "DBtest123",
+  "port" : "1433",
+  "schemaName" : "dbo",
+  "tableFilter" : [ "_AllDiffTypes", "Composites Diff", "Types" ],
+  "schemaFilter" : [ "dbo" ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "readOnly" : false
+}

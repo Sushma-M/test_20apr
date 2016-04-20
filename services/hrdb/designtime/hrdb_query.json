@@ -1,5 +1,27 @@
 {
   "name" : "hrdb",
   "description" : "Queries for hrdb",
-  "queries" : [ ]
+  "queries" : [ {
+    "name" : "SV_Department",
+    "query" : "select * from DEPARTMENT",
+    "comment" : "",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ ],
+    "outputType" : null,
+    "returnTypeMetadata" : {
+      "BUDGET" : "java.lang.Integer",
+      "LOCATION" : "java.lang.String",
+      "NAME" : "java.lang.String",
+      "Q1" : "java.lang.Integer",
+      "Q2" : "java.lang.Integer",
+      "Q3" : "java.lang.Integer",
+      "Q4" : "java.lang.Integer",
+      "DEPTCODE" : "java.lang.String",
+      "TENANTID" : "java.lang.Integer",
+      "DEPTID" : "java.lang.Integer"
+    }
+  } ]
 }

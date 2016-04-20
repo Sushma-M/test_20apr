@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="com.test_20apr.dbtest123.controller,com.test_20apr.dbtest123.service,com.test_20apr.dbtest123.dao"/>
+    <bean class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>
+                    classpath:DBtest123.properties
+                </value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+   <bean id="DBtest123WMManagedDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" depends-on="systemPropertyInitializer" lazy-init="true"
+                      p:driverClass="${DBtest123.driverClass}"
+                      p:jdbcUrl="${DBtest123.url}"
+                      p:user="${DBtest123.username}"
+                      p:password="${DBtest123.password}"
+                      p:maxPoolSize="4"
+                      p:minPoolSize="2"
+                      p:maxIdleTime="600"
+                      p:maxStatements="50"
+                      p:maxStatementsPerConnection="20"
+                      p:checkoutTimeout="10000"
+                      p:idleConnectionTestPeriod="300"
+                      p:unreturnedConnectionTimeout="300"
+                      p:debugUnreturnedConnectionStackTraces="true"
+                      p:acquireRetryAttempts="3"
+                      p:acquireRetryDelay="1000"
+                      p:contextClassLoaderSource="library"
+                      p:privilegeSpawnedThreads="true"
+                      />
+    
+    <bean id="DBtest123SessionFactory" class="com.wavemaker.runtime.data.factory.TypeResolverSessionFactoryBean">
+        <property name="dataSource" ref="DBtest123DataSource"/>
+        <property name="packagesToScan" value="com.test_20apr.dbtest123"/>
+        <property name="mappingResources">
+            <list>
+                <value>
+                    DBtest123-queries.hbm.xml
+                </value>
+            </list>
+        </property>
+        <property name="customTypes">
+            <array value-type="com.wavemaker.runtime.data.CustomType">
+                <ref bean="dateTimeCustomType"/>
+            </array>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">
+                    ${DBtest123.dialect}
+                </prop>
+                <prop key="hibernate.show_sql">
+                    false
+                </prop>
+                <prop key="hibernate.globally_quoted_identifiers">
+                    false
+                </prop>
+                <prop key="hibernate.hbm2ddl.auto">
+                    ${DBtest123.hbm2ddl}
+                </prop>
+                <prop key="hibernate.temp.use_jdbc_metadata_defaults">
+                    false
+                </prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="DBtest123TransactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="DBtest123SessionFactory"/>
+    </bean>
+    <bean id="DBtest123Template" class="org.springframework.orm.hibernate4.HibernateTemplate">
+        <property name="sessionFactory" ref="DBtest123SessionFactory"/>
+    </bean>
+    <bean id="DBtest123WMQueryExecutor" class="com.wavemaker.runtime.data.dao.query.WMQueryExecutorImpl">
+        <property name="template" ref="DBtest123Template"/>
+    </bean>
+    <bean id="DBtest123WMProcedureExecutor" class="com.wavemaker.runtime.data.dao.procedure.WMProcedureExecutorImpl">
+        <property name="template" ref="DBtest123Template"/>
+        <property name="serviceId" value="DBtest123" />
+    </bean>
+
+    <bean id="persistentLocalDateTimeType" class="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime"/>
+    <bean id="dateTimeCustomType" class="com.wavemaker.runtime.data.CustomType">
+        <property name="type" ref="persistentLocalDateTimeType"/>
+        <property name="keys">
+            <list>
+                <value>DateTime</value>
+                <value>org.joda.time.LocalDateTime</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="DBtest123PageableHandlerMethodResolver" class="com.wavemaker.runtime.resolver.WMPageableHandlerMethodArgumentResolver" >
+        <property name="pageParameterName" value="page"/>
+        <property name="sizeParameterName" value="size"/>
+        <property name="oneIndexedParameters" value="true"/>
+        <property name="maxPageSize" value="${DBtest123.maxPageSize}"/>
+        <property name="fallbackPageable">
+         <bean  class="org.springframework.data.domain.PageRequest">
+            <constructor-arg  value="0"/>
+            <constructor-arg  value="20"/>
+         </bean>
+         </property>
+    </bean>
+
+    <bean id="DBtest123DataSource" class="com.wavemaker.runtime.data.datasource.WMDataSource">
+           <property name="dataSourceType" value="${DBtest123.dataSourceType}"/>
+           <property name="jndiName" value="${DBtest123.jndiName}"/>
+           <property name="serviceId" value="DBtest123"/>
+    </bean>
+
+
+    <tx:annotation-driven/>
+
+</beans>
+

@@ -16,6 +16,7 @@ import com.wavemaker.runtime.data.model.CustomQuery;
 import com.wavemaker.runtime.data.exception.QueryParameterMismatchException;
 
 public interface HrdbQueryExecutorService {
+    Page<Object> executeSV_Department(Pageable pageable) throws QueryParameterMismatchException;
 
 	
 	Page<Object> executeWMCustomQuerySelect(CustomQuery query, Pageable pageable) ;

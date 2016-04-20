@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="BMGF_Investments" type="DataService" springFile="BMGF_Investments.spring.xml">
+    <dataobjects>
+        <dataobject javaType="com.test_20apr.bmgf_investments.AttributeCategoryCode">
+            <element name="attributeName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeCategoryCodeId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="codeDisplayOrder" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="attributeCategory" typeRef="com.test_20apr.bmgf_investments.AttributeCategory" allowNull="true"/>
+            <element name="investmentAttributeCodes" typeRef="com.test_20apr.bmgf_investments.InvestmentAttributeCode" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.Initiative">
+            <element name="investments" typeRef="com.test_20apr.bmgf_investments.Investment" isList="true" allowNull="true"/>
+            <element name="subInitiatives" typeRef="com.test_20apr.bmgf_investments.SubInitiative" isList="true" allowNull="true"/>
+            <element name="strategy" typeRef="com.test_20apr.bmgf_investments.Strategy" allowNull="true"/>
+            <element name="initiativeName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="initiativeId" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.SubInitiative">
+            <element name="investments" typeRef="com.test_20apr.bmgf_investments.Investment" isList="true" allowNull="true"/>
+            <element name="subInitiativeId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="keyElements" typeRef="com.test_20apr.bmgf_investments.KeyElement" isList="true" allowNull="true"/>
+            <element name="subInitiativeName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="initiative" typeRef="com.test_20apr.bmgf_investments.Initiative" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.InvestmentAttributeCode">
+            <element name="distributionPercent" typeRef="java.lang.Float" allowNull="true"/>
+            <element name="investmentAttributeCodeId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="codeDisplayOrder" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="investmentAttribute" typeRef="com.test_20apr.bmgf_investments.InvestmentAttribute" allowNull="true"/>
+            <element name="attributeCategoryCode" typeRef="com.test_20apr.bmgf_investments.AttributeCategoryCode" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.Program">
+            <element name="strategies" typeRef="com.test_20apr.bmgf_investments.Strategy" isList="true" allowNull="true"/>
+            <element name="investments" typeRef="com.test_20apr.bmgf_investments.Investment" isList="true" allowNull="true"/>
+            <element name="programId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeCategories" typeRef="com.test_20apr.bmgf_investments.AttributeCategory" isList="true" allowNull="true"/>
+            <element name="programName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.Investment">
+            <element name="investmentName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investmentId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="subInitiative" typeRef="com.test_20apr.bmgf_investments.SubInitiative" allowNull="true"/>
+            <element name="status" typeRef="com.test_20apr.bmgf_investments.Status" allowNull="true"/>
+            <element name="program" typeRef="com.test_20apr.bmgf_investments.Program" allowNull="true"/>
+            <element name="strategy" typeRef="com.test_20apr.bmgf_investments.Strategy" allowNull="true"/>
+            <element name="investmentAttributes" typeRef="com.test_20apr.bmgf_investments.InvestmentAttribute" isList="true" allowNull="true"/>
+            <element name="notes" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investmentIdentifier" typeRef="java.lang.String" allowNull="true"/>
+            <element name="keyElement" typeRef="com.test_20apr.bmgf_investments.KeyElement" allowNull="true"/>
+            <element name="initiative" typeRef="com.test_20apr.bmgf_investments.Initiative" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.Sysdiagrams">
+            <element name="definition" typeRef="java.lang.String" isList="true" allowNull="true"/>
+            <element name="principalId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" allowNull="true"/>
+            <element name="diagramId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="version" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.Strategy">
+            <element name="strategyName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investments" typeRef="com.test_20apr.bmgf_investments.Investment" isList="true" allowNull="true"/>
+            <element name="initiatives" typeRef="com.test_20apr.bmgf_investments.Initiative" isList="true" allowNull="true"/>
+            <element name="program" typeRef="com.test_20apr.bmgf_investments.Program" allowNull="true"/>
+            <element name="attributeCategories" typeRef="com.test_20apr.bmgf_investments.AttributeCategory" isList="true" allowNull="true"/>
+            <element name="strategyId" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.KeyElement">
+            <element name="investments" typeRef="com.test_20apr.bmgf_investments.Investment" isList="true" allowNull="true"/>
+            <element name="keyElementName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="keyElementId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="subInitiative" typeRef="com.test_20apr.bmgf_investments.SubInitiative" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.VwInvestment">
+            <element name="strategyName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investmentName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="subInitiativeId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="strategyId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="initiativeId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="statusId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="statusDescription" typeRef="java.lang.String" allowNull="true"/>
+            <element name="keyElementName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investmentId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="programId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="keyElementId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="initiativeName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="notes" typeRef="java.lang.String" allowNull="true"/>
+            <element name="subInitiativeName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="programName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.Status">
+            <element name="statusId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="statusDescription" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investments" typeRef="com.test_20apr.bmgf_investments.Investment" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.VwInvestmentAttributesAndCodes">
+            <element name="strategyName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investmentName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investmentAttributeCodeId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investmentAttributeId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="subInitiativeId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="strategyId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="initiativeId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeCategoryId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeGroupId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="statusId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="distributionPercent" typeRef="java.lang.Float" allowNull="true"/>
+            <element name="categoryName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="statusDescription" typeRef="java.lang.String" allowNull="true"/>
+            <element name="keyElementName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investmentId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="programId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="keyElementId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="initiativeName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="groupingName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="subInitiativeName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="programName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.AttributeCategory">
+            <element name="categoryName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="program" typeRef="com.test_20apr.bmgf_investments.Program" allowNull="true"/>
+            <element name="categoryDisplayOrder" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="mandatoryAttribute" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="strategy" typeRef="com.test_20apr.bmgf_investments.Strategy" allowNull="true"/>
+            <element name="investmentAttributes" typeRef="com.test_20apr.bmgf_investments.InvestmentAttribute" isList="true" allowNull="true"/>
+            <element name="attributeCategoryCodes" typeRef="com.test_20apr.bmgf_investments.AttributeCategoryCode" isList="true" allowNull="true"/>
+            <element name="attributeGroup" typeRef="com.test_20apr.bmgf_investments.AttributeGroup" allowNull="true"/>
+            <element name="attributeCategoryId" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.InvestmentAttribute">
+            <element name="categoryName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investmentAttributeId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="categoryDisplayOrder" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="mandatoryAttribute" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="relatedTable" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeCategory" typeRef="com.test_20apr.bmgf_investments.AttributeCategory" allowNull="true"/>
+            <element name="investment" typeRef="com.test_20apr.bmgf_investments.Investment" allowNull="true"/>
+            <element name="investmentAttributeCodes" typeRef="com.test_20apr.bmgf_investments.InvestmentAttributeCode" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments.AttributeGroup">
+            <element name="attributeCategories" typeRef="com.test_20apr.bmgf_investments.AttributeCategory" isList="true" allowNull="true"/>
+            <element name="groupingName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeGroupId" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>
