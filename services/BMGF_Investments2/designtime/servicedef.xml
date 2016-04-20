@@ -8,11 +8,13 @@
             <element name="attributeCategoryId" typeRef="java.lang.String" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.test_20apr.bmgf_investments2.Initiative">
+            <element name="investments" typeRef="com.test_20apr.bmgf_investments2.Investment" isList="true" allowNull="true"/>
             <element name="initiativeName" typeRef="java.lang.String" allowNull="true"/>
             <element name="strategyId" typeRef="java.lang.String" allowNull="true"/>
             <element name="initiativeId" typeRef="java.lang.String" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.test_20apr.bmgf_investments2.SubInitiative">
+            <element name="investments" typeRef="com.test_20apr.bmgf_investments2.Investment" isList="true" allowNull="true"/>
             <element name="subInitiativeId" typeRef="java.lang.String" allowNull="true"/>
             <element name="initiativeId" typeRef="java.lang.String" allowNull="true"/>
             <element name="subInitiativeName" typeRef="java.lang.String" allowNull="true"/>
@@ -24,21 +26,22 @@
             <element name="investmentAttributeId" typeRef="java.lang.String" allowNull="true"/>
             <element name="codeDisplayOrder" typeRef="java.lang.Integer" allowNull="true"/>
         </dataobject>
-        <dataobject javaType="com.test_20apr.bmgf_investments2.Investment">
-            <element name="statusId" typeRef="java.lang.String" allowNull="true"/>
-            <element name="investmentName" typeRef="java.lang.String" allowNull="true"/>
+        <dataobject javaType="com.test_20apr.bmgf_investments2.Program">
+            <element name="investments" typeRef="com.test_20apr.bmgf_investments2.Investment" isList="true" allowNull="true"/>
             <element name="programId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="programName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments2.Investment">
+            <element name="investmentName" typeRef="java.lang.String" allowNull="true"/>
             <element name="investmentId" typeRef="java.lang.String" allowNull="true"/>
-            <element name="subInitiativeId" typeRef="java.lang.String" allowNull="true"/>
-            <element name="strategyId" typeRef="java.lang.String" allowNull="true"/>
-            <element name="initiativeId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="subInitiative" typeRef="com.test_20apr.bmgf_investments2.SubInitiative" allowNull="true"/>
+            <element name="status" typeRef="com.test_20apr.bmgf_investments2.Status" allowNull="true"/>
+            <element name="program" typeRef="com.test_20apr.bmgf_investments2.Program" allowNull="true"/>
+            <element name="strategy" typeRef="com.test_20apr.bmgf_investments2.Strategy" allowNull="true"/>
             <element name="notes" typeRef="java.lang.String" allowNull="true"/>
             <element name="investmentIdentifier" typeRef="java.lang.String" allowNull="true"/>
             <element name="keyElement" typeRef="com.test_20apr.bmgf_investments2.KeyElement" allowNull="true"/>
-        </dataobject>
-        <dataobject javaType="com.test_20apr.bmgf_investments2.Program">
-            <element name="programId" typeRef="java.lang.String" allowNull="true"/>
-            <element name="programName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="initiative" typeRef="com.test_20apr.bmgf_investments2.Initiative" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.test_20apr.bmgf_investments2.Sysdiagrams">
             <element name="definition" typeRef="java.lang.String" isList="true" allowNull="true"/>
@@ -49,6 +52,7 @@
         </dataobject>
         <dataobject javaType="com.test_20apr.bmgf_investments2.Strategy">
             <element name="strategyName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investments" typeRef="com.test_20apr.bmgf_investments2.Investment" isList="true" allowNull="true"/>
             <element name="programId" typeRef="java.lang.String" allowNull="true"/>
             <element name="strategyId" typeRef="java.lang.String" allowNull="true"/>
         </dataobject>
@@ -57,6 +61,11 @@
             <element name="keyElementName" typeRef="java.lang.String" allowNull="true"/>
             <element name="keyElementId" typeRef="java.lang.String" allowNull="true"/>
             <element name="subInitiativeId" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.test_20apr.bmgf_investments2.Status">
+            <element name="statusId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="statusDescription" typeRef="java.lang.String" allowNull="true"/>
+            <element name="investments" typeRef="com.test_20apr.bmgf_investments2.Investment" isList="true" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.test_20apr.bmgf_investments2.VwInvestment">
             <element name="strategyName" typeRef="java.lang.String" allowNull="true"/>
@@ -74,10 +83,6 @@
             <element name="notes" typeRef="java.lang.String" allowNull="true"/>
             <element name="subInitiativeName" typeRef="java.lang.String" allowNull="true"/>
             <element name="programName" typeRef="java.lang.String" allowNull="true"/>
-        </dataobject>
-        <dataobject javaType="com.test_20apr.bmgf_investments2.Status">
-            <element name="statusId" typeRef="java.lang.String" allowNull="true"/>
-            <element name="statusDescription" typeRef="java.lang.String" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.test_20apr.bmgf_investments2.VwInvestmentAttributesAndCodes">
             <element name="strategyName" typeRef="java.lang.String" allowNull="true"/>

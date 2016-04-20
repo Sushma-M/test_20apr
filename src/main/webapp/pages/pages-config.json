@@ -13,30 +13,25 @@
 }, {
   "name" : "aaaaa",
   "type" : "PAGE"
-},
-{
+}, {
   "name" : "defaultprefabspage",
   "type" : "PAGE"
-},
-  {
-    "name": "footer",
-    "type": "FOOTER"
-  },
-  {
-    "name": "header",
-    "type": "HEADER"
-  },
-  {
-    "name": "leftnav",
-    "type": "LEFTNAV"
-  },
-  {
-    "name": "rightnav",
-    "type": "RIGHTNAV"
-
-  },
-  {
-    "name": "topnav",
-    "type": "TOPNAV"
-  }
-]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER"
+}, {
+  "name" : "header",
+  "type" : "HEADER"
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV"
+}, {
+  "name" : "rightnav",
+  "type" : "RIGHTNAV"
+}, {
+  "name" : "sdsds",
+  "type" : "PAGE"
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV"
+} ]

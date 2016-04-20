@@ -73,15 +73,6 @@ public class TypesController {
         return WMMultipartUtils.buildDownloadResponseForBlob(instance, fieldName, httpServletRequest, download);
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    @ApiOperation(value = "Creates a new Types instance.")
-    public Types createTypes(@RequestBody Types instance) {
-        LOGGER.debug("Create Types with information: {}", instance);
-        instance = typesService.create(instance);
-        LOGGER.debug("Created Types with information: {}", instance);
-        return instance;
-    }
-
     /**
 	 * This setter method should only be used by unit tests
 	 * 
@@ -98,6 +89,16 @@ public class TypesController {
         Types types = WMMultipartUtils.toObject(multipartHttpServletRequest, Types.class, "DB123Testing");
         LOGGER.debug("Creating a new types with information: {}", types);
         return typesService.create(types);
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Creates a new Types instance.")
+    public Types createTypes(@RequestBody Types instance) {
+        LOGGER.debug("Create Types with information: {}", instance);
+        instance = typesService.create(instance);
+        LOGGER.debug("Created Types with information: {}", instance);
+        return instance;
     }
 
     @RequestMapping(value = "/count", method = RequestMethod.GET)
