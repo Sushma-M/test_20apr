@@ -1,4 +1,30 @@
 {
+  "appNotification" : {
+    "_id" : "wm-appErrorHandler-wm.NotificationVariable-1454664620943",
+    "name" : "appNotification",
+    "owner" : "App",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "list"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "list"
+    } ],
+    "operation" : "toast"
+  },
+  "goToPage_aaaaa" : {
+    "_id" : "wm-goToPage_aaaaa-wm.NavigationVariable-1461142449585",
+    "name" : "goToPage_aaaaa",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "aaaaa",
+    "pageTransitions" : "none"
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",
@@ -18,24 +44,5 @@
     "type" : "string",
     "isList" : false,
     "saveInPhonegap" : false
-  },
-  "appNotification": {
-      "_id": "wm-appErrorHandler-wm.NotificationVariable-1454664620943",
-      "name": "appNotification",
-      "owner": "App",
-      "category": "wm.NotificationVariable",
-      "dataBinding": [
-        {
-          "target": "class",
-          "value": "Error",
-          "type": "list"
-        },
-        {
-          "target": "toasterPosition",
-          "value": "bottom right",
-          "type": "list"
-        }
-      ],
-      "operation": "toast"
-    }
+  }
 }
