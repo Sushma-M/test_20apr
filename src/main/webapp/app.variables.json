@@ -25,6 +25,16 @@
     "pageName" : "aaaaa",
     "pageTransitions" : "none"
   },
+  "goToPage_defaultprefabspage" : {
+    "_id" : "wm-goToPage_defaultprefabspage-wm.NavigationVariable-1461142837821",
+    "name" : "goToPage_defaultprefabspage",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "defaultprefabspage",
+    "pageTransitions" : "none"
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",
@@ -1033,6 +1043,7 @@
         "relatedTableName" : "EMPLOYEE",
         "relatedEntityName" : "Employee",
         "relatedFieldName" : "employee.eid",
+        "isList" : false,
         "targetTable" : "EMPLOYEE",
         "scale" : 0,
         "columns" : [ {

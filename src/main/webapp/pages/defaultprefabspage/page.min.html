@@ -1,0 +1,58 @@
+<style id="defaultprefabspage.css">
+
+</style>
+<script id="defaultprefabspage.js">
+Application.$controller("defaultprefabspagePageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action on widgets/variables within this block */
+    $scope.onPageReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script
+         * $scope.Variables.loggedInUser.getData()
+         *
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. to get value of text widget named 'username' use following script
+         * '$scope.Widgets.username.datavalue'
+         */
+    };
+
+}]);
+
+</script>
+<script id="defaultprefabspage.variables.json">
+var _defaultprefabspagePage_Variables_ ={}
+</script>
+<script id="defaultprefabspage.html" type="text/ng-template">
+<wm-page data-ng-controller="defaultprefabspagePageController" pagetitle="Defaultprefabspage" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-accordion name="accordion1">
+                <wm-accordionpane name="accordionpane1">
+                    <wm-accordionheader name="accordionheader1" heading="googlemaps"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent1">
+                        <wm-prefab prefabname="googlemaps" name="googlemaps1"></wm-prefab>
+                    </wm-accordioncontent>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane2">
+                    <wm-accordionheader name="accordionheader2" heading="fbpost"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent2">
+                        <wm-prefab prefabname="fbpost" name="fbpost1" height="574"></wm-prefab>
+                    </wm-accordioncontent>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane3">
+                    <wm-accordionheader name="accordionheader3" heading="youtube"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent3">
+                        <wm-prefab prefabname="youtube" name="youtube1"></wm-prefab>
+                    </wm-accordioncontent>
+                </wm-accordionpane>
+            </wm-accordion>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>
+</script>
