@@ -1,0 +1,25 @@
+[ {
+  "name" : "adminrole",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "userrole",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Page"
+  }
+}, {
+  "name" : "admin",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "user",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+} ]
